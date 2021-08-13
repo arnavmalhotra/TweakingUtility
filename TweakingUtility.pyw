@@ -102,7 +102,7 @@ sidebar_inputDelayFrame = tk.Button(sidebar,text="Input Delay Tweaks", command =
 def restorePoint():
     executeFile("restorepoint.lnk")
 def adwcleaner():
-    os.startfile("bin/QWR3Y2xlYW5lcgo.exe")
+    os.startfile("bin/Adwcleaner.exe")
 def cctrialsetup():
     os.startfile("bin/cctrialsetup.exe")
 def cleanmgr():
@@ -213,33 +213,55 @@ def disableExtraServices():
 def disableBluetooth():
     executeFile("OPTIONAL Disable Bluetooth Services.reg")
 def disableDownloadMaps():
-    pass
+    executeFile("Optional Disable Download Maps Manager.reg")
 def disablePrinterServices():
-    pass
+    executeFile("OPTIONAL Disable Printer Services.reg")
 def disableXboxServices():
-    pass
+    executeFile("OPTIONAL Disable Xbox Services.reg")
 
-servicesBTN1 = tk.Button(ServicesFrame,text="Disable UAC").pack()
-servicesBTN2 = tk.Button(ServicesFrame,text="Disable Updates").pack()
-servicesBTN3 = tk.Button(ServicesFrame,text="Disable Diagnostics and Telemetry").pack()
-servicesBTN4 = tk.Button(ServicesFrame,text="Disable Extra Uneeccesary Services").pack()
-servicesBTN5 = tk.Button(ServicesFrame,text="Disable Bluetooth Service").pack()
-servicesBTN6 = tk.Button(ServicesFrame,text="Disable Download Maps").pack()
-servicesBTN7 = tk.Button(ServicesFrame,text="Disable Printer Service").pack()
-servicesBTN8 = tk.Button(ServicesFrame,text="Disable Xbox Services").pack()
+servicesBTN1 = tk.Button(ServicesFrame,text="Disable UAC",command=disableUAC).pack()
+servicesBTN2 = tk.Button(ServicesFrame,text="Disable Updates",command=disableUpdate).pack()
+servicesBTN3 = tk.Button(ServicesFrame,text="Disable Diagnostics and Telemetry",command=disableDiagnosticsTelemtry).pack()
+servicesBTN4 = tk.Button(ServicesFrame,text="Disable Extra Uneeccesary Services",command=disableExtraServices).pack()
+servicesBTN5 = tk.Button(ServicesFrame,text="Disable Bluetooth Service",command=disableBluetooth).pack()
+servicesBTN6 = tk.Button(ServicesFrame,text="Disable Download Maps",command=disableDownloadMaps).pack()
+servicesBTN7 = tk.Button(ServicesFrame,text="Disable Printer Service",command=disablePrinterServices).pack()
+servicesBTN8 = tk.Button(ServicesFrame,text="Disable Xbox Services",command=disableXboxServices).pack()
 
-pingBTN1 = tk.Button(PingFrame,text="Button1").pack()
-pingBTN2 = tk.Button(PingFrame,text="Button2").pack()
-pingBTN3 = tk.Button(PingFrame,text="Button3").pack()
-pingBTN4 = tk.Button(PingFrame,text="Button4").pack()
+def deliveryOpt():
+    executeFile("Disable Delivery Optimization.reg")
+def networkThrottle():
+    executeFile("Disable Network Throttling Index.reg")
+def OnedriveSync():
+    executeFile("Disable OneDrive Sync.reg")
+def networkPriorities():
+    executeFile("Reinforce Network Priorities.reg")
 
-latencyBTN1 = tk.Button(LatencyFrame,text="Button1").pack()
 
-performanceBTN1 = tk.Button(PerformanceFrame,text="Button 1").pack()
+pingBTN1 = tk.Button(PingFrame,text="Disable Delivery Optimization",command=deliveryOpt).pack()
+pingBTN2 = tk.Button(PingFrame,text="Disable Network Throttling Index",command=networkThrottle).pack()
+pingBTN3 = tk.Button(PingFrame,text="Disable Onedrive Sync",command=OnedriveSync).pack()
+pingBTN4 = tk.Button(PingFrame,text="Reinforce Network Priorities",command=networkPriorities).pack()
 
-AMDBTN1 = tk.Button(AMDFrame,text="Button1").pack()
+def lowestInputLatency():
+    executeFile("28 Hex - Lowest Input Latency.reg")
 
-NVIDIABTN1 = tk.Button(NVIDIAFrame,text="Button1").pack()
+latencyBTN1 = tk.Button(LatencyFrame,text="Lowest Input Latency",command=lowestInputLatency).pack()
+
+
+def highPerformance():
+    executeFile("Default - 26 Hex (Priority To Programs).reg")
+
+performanceBTN1 = tk.Button(PerformanceFrame,text="Highest Performanece",command=highPerformance).pack()
+
+def AMDPriority():
+    executeFile("AMD Thread Priority.reg")
+AMDBTN1 = tk.Button(AMDFrame,text="AMD thread priority",command=AMDPriority).pack()
+
+def nvidiaButton():
+    executeFile("NVIDIA Thread Priority.reg")
+
+NVIDIABTN1 = tk.Button(NVIDIAFrame,text="NVIDIA Thread Priority",command=nvidiaButton).pack()
 
 PresetBTN1 = tk.Button(PresetFrame,text="Button1").pack()
 PresetBTN2 = tk.Button(PresetFrame,text="Button2").pack()
