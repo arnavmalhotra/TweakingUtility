@@ -263,9 +263,15 @@ def nvidiaButton():
 
 NVIDIABTN1 = tk.Button(NVIDIAFrame,text="NVIDIA Thread Priority",command=nvidiaButton).pack()
 
-PresetBTN1 = tk.Button(PresetFrame,text="Button1").pack()
-PresetBTN2 = tk.Button(PresetFrame,text="Button2").pack()
-PresetBTN3 = tk.Button(PresetFrame,text="Button3").pack()
+def centxeRegistry():
+    executeFile("Centxe's Registry.reg")
+def BCDtweaks():
+    executeFile("Latency BCS Tweaks.cmd")
+def allwindowssettings():
+    executeFile("Optimize ALL Windows Settings.reg")
+PresetBTN1 = tk.Button(PresetFrame,text="Centxe's Registry",command=centxeRegistry).pack()
+PresetBTN2 = tk.Button(PresetFrame,text="Latency BCD Tweaks", command=BCDtweaks).pack()
+PresetBTN3 = tk.Button(PresetFrame,text="Optimize all windows settings",command=allwindowssettings).pack()
 
 mouseBTN1 = tk.Button(MouseFrame,text="Button 1").pack()
 mouseBTN2 = tk.Button(MouseFrame,text="Button 2").pack()
