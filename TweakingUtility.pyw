@@ -273,15 +273,26 @@ PresetBTN1 = tk.Button(PresetFrame,text="Centxe's Registry",command=centxeRegist
 PresetBTN2 = tk.Button(PresetFrame,text="Latency BCD Tweaks", command=BCDtweaks).pack()
 PresetBTN3 = tk.Button(PresetFrame,text="Optimize all windows settings",command=allwindowssettings).pack()
 
-mouseBTN1 = tk.Button(MouseFrame,text="Button 1").pack()
-mouseBTN2 = tk.Button(MouseFrame,text="Button 2").pack()
-mouseBTN3 = tk.Button(MouseFrame,text="Button 3").pack()
 
-soundBTN = tk.Button(SoundFrame,text="Button 1").pack()
+def M1MouseAccel():
+    executeFile("M1 Mouse Acceleration")
+def M2MarkC():
+    executeFile("M2 MarkC Windows 10 Mouse Fix.reg")
 
-powerPlanBTN1 = tk.Button(PowerPlanFrame,text="Button 1").pack()
+mouseBTN1 = tk.Button(MouseFrame,text="M1 Mouse Acceleration",command=M1MouseAccel).pack()
+mouseBTN2 = tk.Button(MouseFrame,text="M2 MarkC Windows 10 Mouse Fix",command=M2MarkC).pack()
 
-inputDelayBTN = tk.Button(InputDelayFrame,text="Button 1").pack()
+def changeSoundSettings():
+    executeFile("Change Sound Settings.lnk")
+soundBTN = tk.Button(SoundFrame,text="Change Sound Settings",command=changeSoundSettings).pack()
+
+def importPowerPlan():
+    executeFile("1 Import Centxe Power Plan.bat")
+powerPlanBTN1 = tk.Button(PowerPlanFrame,text="Import Centxe Power Plan",command=importPowerPlan).pack()
+
+def inputDelay():
+    executeFile("ISLC v1.0.2.4.exe")
+inputDelayBTN = tk.Button(InputDelayFrame,text="Input Delay",command=inputDelay).pack()
 
 
 
