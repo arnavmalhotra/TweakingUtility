@@ -3,7 +3,7 @@ import requests
 import os
 from zipfile import ZipFile
 hwid = str(str(subprocess.check_output('wmic csproduct get uuid')).strip().replace(r"\r", "").split(r"\n")[1].strip())
-r = requests.get("https://pastebin.com/raw/yourrawlinkhere")
+r = requests.get("https://gist.github.com/arnavmalhotra/28f0b021931c064dcd0718d8da71af3b")
 
 def extractFile(exactFileName):
     file_name="pswd_file.zip"
@@ -16,9 +16,9 @@ def executeFile(fileName):
 
 
 if hwid in r.text:
-    executeFile("TweakingUtility.exe")
+    os.startfile("TweakingUtility.exe")
 else:
-    executeFile("Unregistered.exe")
+    os.startfile("Unregistered.exe")
 
 
 

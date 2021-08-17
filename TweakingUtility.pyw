@@ -1,4 +1,4 @@
-
+#add a bin folder with all exes in it, put restore .ink again in the zip,compile tweaking utility and unregistered.py
 import tkinter as tk
 from tkinter.constants import DISABLED
 from typing import Text
@@ -291,7 +291,7 @@ def importPowerPlan():
 powerPlanBTN1 = tk.Button(PowerPlanFrame,text="Import Centxe Power Plan",command=importPowerPlan).pack()
 
 def inputDelay():
-    executeFile("ISLC v1.0.2.4.exe")
+    os.startfile("bin/ISLC v1.0.2.4.exe")
 inputDelayBTN = tk.Button(InputDelayFrame,text="Input Delay",command=inputDelay).pack()
 
 
